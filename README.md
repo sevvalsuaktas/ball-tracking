@@ -9,7 +9,7 @@ Kodu çalıştırabilmek için bilgisayarınızda Python yüklü olmalıdır. Ge
 ```bash
 pip install opencv-python numpy
 
-Nasıl Çalıştırılır?
+## Nasıl Çalıştırılır?
 Video dosyaları yüksek boyutlu olduğu için bu depoya eklenmemiştir. Kodu kendi bilgisayarınızda denemek için aşağıdaki adımları izleyin:
 
 Test edeceğiniz tenis topu videosunu bu proje klasörünün içine indirin.
@@ -17,5 +17,7 @@ Test edeceğiniz tenis topu videosunu bu proje klasörünün içine indirin.
 Videonun adını tam olarak video.mp4 yapın (veya kod içindeki cv2.VideoCapture('video.mp4') kısmını kendi videonuzun adıyla güncelleyin).
 
 Terminalde kodu çalıştırın:
+
+```bash
 python main.py
 (Eğer dosyanın adını tenisball.py yaptıysanız komutu python tenisball.py olarak değiştirin)
