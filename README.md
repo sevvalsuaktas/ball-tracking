@@ -1,6 +1,11 @@
-# Tenis Topu Takibi 🎾
+# Otonom Top Takibi ve Manevra Yönlendirmesi 🎾🏀
 
-Bu proje, TEKNOFEST görevi kapsamında OpenCV kullanılarak HSV renk uzayında hareketli bir tenis topunun tespit edilmesi ve takip edilmesi için geliştirilmiştir. Algoritma, topun merkez koordinatlarını (X, Y) hesaplar ve 100 milisaniyede bir terminale yazdırır.
+Bu proje, TEKNOFEST otonom sistemler görevi kapsamında OpenCV kullanılarak geliştirilmiştir. Algoritma, hareketli tenis ve basketbol toplarını HSV renk uzayında tespit eder, kameranın tam merkezi ile hedefin merkezi arasına bir yönlendirme vektörü çizer ve otonom araçlar için dinamik manevra komutları üretir.
+
+## Proje Özellikleri
+* **Çoklu Hedef Takibi:** Ortak bir maskeleme mantığıyla tek kod üzerinden hem tenis (sarı/yeşil) hem de basketbol (turuncu/kahverengi) toplarını eşzamanlı izleme.
+* **Otonom Yönlendirme Vektörü:** Kameranın merkez noktasını (X, Y) referans alarak hedefe çizgi çekme ve 50 piksellik tolerans payıyla yönlendirme komutları (`SOLA DON`, `SAGA DON`, `MERKEZDE`) oluşturma.
+* **Canlı HSV Kalibrasyonu:** Farklı saha koşullarında, ortam ışığında ve hareket bulanıklığında (motion blur) renk eşiklerini anlık olarak ayarlayabilmek için sisteme entegre edilen `calibration.py` aracı.
 
 ## Kurulum ve Gereksinimler
 
@@ -8,16 +13,3 @@ Kodu çalıştırabilmek için bilgisayarınızda Python yüklü olmalıdır. Ge
 
 ```bash
 pip install opencv-python numpy
-
-## Nasıl Çalıştırılır?
-Video dosyaları yüksek boyutlu olduğu için bu depoya eklenmemiştir. Kodu kendi bilgisayarınızda denemek için aşağıdaki adımları izleyin:
-
-Test edeceğiniz tenis topu videosunu bu proje klasörünün içine indirin.
-
-Videonun adını tam olarak video.mp4 yapın (veya kod içindeki cv2.VideoCapture('video.mp4') kısmını kendi videonuzun adıyla güncelleyin).
-
-Terminalde kodu çalıştırın:
-
-```bash
-python main.py
-(Eğer dosyanın adını tenisball.py yaptıysanız komutu python tenisball.py olarak değiştirin)
